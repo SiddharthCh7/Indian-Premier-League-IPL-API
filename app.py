@@ -8,7 +8,7 @@ data = Data()
 
 @app.get("/")
 async def index():
-    return FileResponse(index.html)
+    return FileResponse("index.html")
 
 # Endpoint to get all matches data
 @app.get("/sid/all", response_class=JSONResponse)
