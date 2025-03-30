@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Data API Documentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .endpoint {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+        .method {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .path {
+            font-family: monospace;
+            font-size: 1.1em;
+            color: #2980b9;
+        }
+        .description {
+            margin: 10px 0;
+        }
+        .param {
+            margin-left: 20px;
+            font-family: monospace;
+        }
+        .portfolio {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+        .portfolio a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .portfolio a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>IPL Data API Documentation</h1>
+    <p>API endpoints for accessing Indian Premier League cricket statistics.</p>
+
+    <div class="endpoint">
+        <div><span class="method">GET</span> <span class="path">/</span></div>
+        <div class="description">API welcome message</div>
+    </div>
+
+    <div class="endpoint">
+        <div><span class="method">GET</span> <span class="path">/sid/all</span></div>
+        <div class="description">Get all matches data</div>
+    </div>
+
+    <div class="endpoint">
+        <div><span class="method">GET</span> <span class="path">/sid/teams</span></div>
+        <div class="description">Get all teams that have ever played in IPL</div>
+    </div>
+
+    <div class="endpoint">
+        <div><span class="method">GET</span> <span class="path">/sid/team_vs_team_info/{team1},{team2}</span></div>
+        <div class="description">Get head-to-head information between two teams</div>
+        <div class="param">Parameters: team1 (string), team2 (string)</div>
+    </div>
+
+    <div class="endpoint">
+        <div><span class="method">GET</span> <span class="path">/sid/team_vs_team_stats/{team1},{team2}</span></div>
+        <div class="description">Get detailed statistics between two teams</div>
+        <div class="param">Parameters: team1 (string), team2 (string)</div>
+    </div>
+
+    <div class="endpoint">
+        <div><span class="method">GET</span> <span class="path">/sid/team_vs_all/{team}</span></div>
+        <div class="description">Get a team's performance against all opponents</div>
+        <div class="param">Parameters: team (string)</div>
+    </div>
+
+    <div class="endpoint">
+        <div><span class="method">GET</span> <span class="path">/sid/batsman_record/{batsman}</span></div>
+        <div class="description">Get batting statistics for a specific player</div>
+        <div class="param">Parameters: batsman (string)</div>
+    </div>
+
+    <div class="endpoint">
+        <div><span class="method">GET</span> <span class="path">/sid/bowler_record/{bowler}</span></div>
+        <div class="description">Get bowling statistics for a specific player</div>
+        <div class="param">Parameters: bowler (string)</div>
+    </div>
+
+    <div class="endpoint">
+        <div><span class="method">GET</span> <span class="path">/sid/batsman_vs_bowler/{batsman},{bowler}</span></div>
+        <div class="description">Get performance data for a batsman against a specific bowler</div>
+        <div class="param">Parameters: batsman (string), bowler (string)</div>
+    </div>
+
+    <div class="endpoint">
+        <div><span class="method">GET</span> <span class="path">/sid/batsman_record/{team}</span></div>
+        <div class="description">Get venue-wise performance for a team (Note: Endpoint path appears mislabeled as 'batsman_record')</div>
+        <div class="param">Parameters: team (string)</div>
+    </div>
+
+    <div class="portfolio">
+        <h2>About the Developer</h2>
+        <p>This API was developed by <strong>Siddharth</strong></p>
+        
+        <h3>Explore My Portfolio</h3>
+        <p>Check out my other projects and professional work:</p>
+        <ul>
+            <li>🌐 <a href="https://siddharthch7.github.io/Portfolio/" target="_blank">Portfolio</a></li>
+            <li>💼 <a href="https://linkedin.com/in/siddharth-ch05" target="_blank">LinkedIn</a></li>
+            <li>🐙 <a href="https://github.com/SiddharthCh7" target="_blank">GitHub</a></li>
+        </ul>
+        
+        <h3>Contact Me</h3>
+        <p>For API support or collaboration opportunities:</p>
+        <ul>
+            <li>📧 <a href="mailto:siddharth070504@gmail.com">siddharth070504@gmail.com</a></li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>Note: All endpoints return JSON responses. Team and player names should be URL-encoded if they contain spaces.</p>
+        <p>© 2025 Siddharth. All rights reserved.</p>
+    </div>
+</body>
+</html>

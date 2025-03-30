@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from fastapi import Path
 from supabase_client import Data
 
@@ -7,8 +7,8 @@ app = FastAPI()
 data = Data()
 
 @app.get("/")
-def index():
-    return "Hi, this is the API to get IPL data"
+async def index():
+    return FileResponse(index.html)
 
 # Endpoint to get all matches data
 @app.get("/sid/all", response_class=JSONResponse)
