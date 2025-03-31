@@ -24,7 +24,7 @@ class Data:
         try:
             teams_data = self.supabase.table("IPL").select("Team1, Team2").execute()
             result = list(set([t['Team1'] for t in teams_data.data if t['Team1'] is not None]))
-            return result
+            return {"teams":result}
         except Exception as e:
             print("Exception in 'get_teams': {}".format(str(e)))
             raise
